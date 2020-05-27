@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        mavenCentral()
+        jcenter()
+        maven {
+            url = "https://dl.bintray.com/gradle/gradle-plugins"
+        }
+        maven {
+            url = "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url = "https://packages.confluent.io/maven/"
+        }
+    }
+}
+
+rootProject.name = 'stream'

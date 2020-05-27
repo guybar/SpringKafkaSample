@@ -1,0 +1,4 @@
+sourceTopic:
+  name: GUY_8_USERS
+destinationTopic:
+  name: enrichedUsers_8
