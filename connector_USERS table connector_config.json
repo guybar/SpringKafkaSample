@@ -1,0 +1,28 @@
+{
+  "name": "USERS table connector 8",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "tasks.max": "1",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "io.confluent.connect.avro.AvroConverter",
+    "transforms": "createKey, AddNamespace",
+    "transforms.createKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
+    "transforms.createKey.fields": "ID",
+    "transforms.AddNamespace.type": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
+    "transforms.AddNamespace.schema.name": "com.zim.kafka.poc.connect.USERS",
+    "connection.url": "jdbc:oracle:thin:@hfaexadbadm05:1611:iqpet7",
+    "connection.user": "TW",
+    "connection.password": "thru",
+    "table.whitelist": "USERS",
+    "dialect.name": "OracleDatabaseDialect",
+    "mode": "incrementing",
+    "incrementing.column.name": "ID",
+    "table.types": "TABLE",
+    "numeric.mapping": "precision_only",
+    "poll.interval.ms": "10000",
+    "topic.prefix": "GUY_8_",
+    "value.converter.schema.registry.url": "http://schema-registry:8081",
+    "topic.config.sync": "false",
+    "value.converter.schemas.enable": "true"
+  }
+}
