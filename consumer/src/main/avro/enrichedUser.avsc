@@ -1,0 +1,21 @@
+{
+  "namespace": "io.confluent.developer",
+  "type": "record",
+  "name": "EnrichedUser",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "avro.java.string": "String"
+    },
+    {
+      "name": "age",
+      "type": "int"
+    },
+    {
+      "name": "role",
+      "type": "string",
+      "avro.java.string": "String"
+    }
+  ]
+}

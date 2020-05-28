@@ -1,0 +1,23 @@
+{
+  "connect.name": "com.zim.kafka.poc.connect.USERS",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "long"
+    },
+    {
+      "name": "NAME",
+      "type": "string"
+    },
+    {
+      "name": "AGE",
+      "type": {
+        "connect.type": "int16",
+        "type": "int"
+      }
+    }
+  ],
+  "name": "USERS",
+  "namespace": "com.zim.kafka.poc.connect",
+  "type": "record"
+}
