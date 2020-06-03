@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "65f52db8-5b30-4f98-aa9b-33b5b2f31b7b",
+		"name": "Connect Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Connector",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"USERS table connector 8\",\n  \"config\": {\n    \"connector.class\": \"io.confluent.connect.jdbc.JdbcSourceConnector\",\n    \"tasks.max\": \"1\",\n    \"key.converter\": \"org.apache.kafka.connect.storage.StringConverter\",\n    \"value.converter\": \"io.confluent.connect.avro.AvroConverter\",\n    \"transforms\": \"createKey, AddNamespace\",\n    \"transforms.createKey.type\": \"org.apache.kafka.connect.transforms.ValueToKey\",\n    \"transforms.createKey.fields\": \"ID\",\n    \"transforms.AddNamespace.type\": \"org.apache.kafka.connect.transforms.SetSchemaMetadata$Value\",\n    \"transforms.AddNamespace.schema.name\": \"com.zim.kafka.poc.connect.USERS\",\n    \"connection.url\": \"jdbc:oracle:thin:@hfaexadbadm05:1611:iqpet7\",\n    \"connection.user\": \"TW\",\n    \"connection.password\": \"thru\",\n    \"table.whitelist\": \"USERS\",\n    \"dialect.name\": \"OracleDatabaseDialect\",\n    \"mode\": \"incrementing\",\n    \"incrementing.column.name\": \"ID\",\n    \"table.types\": \"TABLE\",\n    \"numeric.mapping\": \"precision_only\",\n    \"poll.interval.ms\": \"10000\",\n    \"topic.prefix\": \"GUY_8_\",\n    \"value.converter.schema.registry.url\": \"http://schema-registry:8081\",\n    \"topic.config.sync\": \"false\",\n    \"value.converter.schemas.enable\": \"true\"\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8083/connectors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors"
+					]
+				},
+				"description": "tttt"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
